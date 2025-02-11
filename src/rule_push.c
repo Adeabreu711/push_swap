@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rule_push.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/11 00:50:29 by alde-abr          #+#    #+#             */
+/*   Updated: 2025/02/11 02:49:16 by alde-abr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/push_swap.h"
+
+//Push the top element of stack src to the top of stack dest.
+static void	ft_push(t_stack **src, t_stack **dest)
+{
+	t_stack	*temp;
+
+	if (!*src)
+		return ;
+	temp = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = temp;
+}
+//Push the top element of stack b to the top of stack a.
+void	ft_pa(t_stack **stk_a, t_stack **stk_b)
+{
+	ft_push(stk_b, stk_a);
+	write(1, "pa\n", 3);
+}
+
+//Push the top element of stack a to the top of stack b.
+void	ft_pb(t_stack **stk_a, t_stack **stk_b)
+{
+	ft_push(stk_a, stk_b);
+	write(1, "pb\n", 3);
+}
