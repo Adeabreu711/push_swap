@@ -6,13 +6,15 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:44:26 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 00:49:37 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/11 18:13:07 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-long	ft_atoi_strict(const char *nptr)
+//Return a long corresponding to the given int in the given string nptr,
+//return INT_MIN - 1 if nptr isn't a strict int.
+static long	ft_atoi_strict(const char *nptr)
 {
 	int		i;
 	long	temp;
@@ -31,21 +33,7 @@ long	ft_atoi_strict(const char *nptr)
 	return (temp * sign);
 }
 
-void	ft_set_index(t_stack *stk)
-{
-	int		i;
-	t_stack	*temp;
-
-	i = 1;
-	temp = stk;
-	while (temp)
-	{
-		temp->id = i;
-		temp = temp->next;
-		i++;
-	}
-}
-
+//Check if the stack a doesn't contain two equal value.
 int	ft_check_duplicate(t_stack *stk_a)
 {
 	t_stack	*value;
@@ -66,6 +54,24 @@ int	ft_check_duplicate(t_stack *stk_a)
 	return (1);
 }
 
+//Set the index of the elements of the given stack in order.
+void	ft_set_index(t_stack *stk)
+{
+	int		i;
+	t_stack	*temp;
+
+	i = 1;
+	temp = stk;
+	while (temp)
+	{
+		temp->id = i;
+		temp = temp->next;
+		i++;
+	}
+}
+
+// Read the given arguments and assign them to stack A.
+// [Return: 0] if an argument is not an integer or if its identical to another.
 int	ft_ps_parsing(t_stack **stk_a, int argc, char **argv)
 {
 	int		i;

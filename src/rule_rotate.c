@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 01:33:06 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 03:00:53 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/11 14:57:30 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ static void	ft_rotate(t_stack **stk)
 	last = ft_stklast(*stk);
 	last->next = temp;
 	temp->next = NULL;
+	ft_set_index(*stk);
 }
 
 //The top element of the stack a became the last.
