@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:44:26 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 18:13:07 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/24 13:52:32 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	ft_ps_parsing(t_stack **stk_a, int argc, char **argv)
 	int		i;
 	long	nb;
 
-	if (argc < 2)
+	if (argc < 3)
 		return (0);
 	i = 0;
 	while (++i < argc)

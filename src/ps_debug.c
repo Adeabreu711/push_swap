@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:11:32 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 02:41:51 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/24 16:27:48 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_print_stack(t_stack *stk_a, t_stack *stk_b)
 
 	temp_a = stk_a;
 	temp_b = stk_b;
-	ft_printf("STACK A %10s STACK B\n\n", "");
+	ft_printf("\nSTACK A %10s STACK B\n\n", "");
 	while (temp_a || temp_b)
 	{
 		if (temp_a)
@@ -37,4 +37,5 @@ void	ft_print_stack(t_stack *stk_a, t_stack *stk_b)
 		}
 		write(1,"\n",1);
 	}
+	write(1,"\n",1);
 }

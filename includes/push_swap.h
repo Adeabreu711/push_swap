@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:58:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 02:52:59 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/24 17:14:00 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ typedef struct s_stack
 int		ft_ps_parsing(t_stack **stk_a, int argc, char **argv);
 void	ft_print_stack(t_stack *stk_a, t_stack *stk_b);
 void	ft_set_index(t_stack *stk);
-t_stack	*ft_init_stack_b(t_stack *stk_a);
+void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b);
+
+t_stack	*ft_get_cheaper(t_stack **stk_a, t_stack **stk_b);
 
 //Rules
 void	ft_sa(t_stack **stk_a);
