@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:16:01 by alexandre         #+#    #+#             */
-/*   Updated: 2025/02/09 01:36:44 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/26 11:59:16 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ int		ft_digitcount_base(int dec, char *base_to);
 char	*ft_strupcase(char *str);
 char	*ft_strlowcase(char *str);
 int		ft_intcomp(int i, int j, t_uint16 upper);
+int		ft_abs(int n);
 
 #endif

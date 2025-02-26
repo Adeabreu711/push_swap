@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 01:16:40 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 15:27:30 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/26 21:05:09 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,13 @@
 static void	ft_swap(t_stack *stk)
 {
 	int	temp_nb;
-	int	temp_id;
 
 	if (!stk || !stk->next)
 		return ;
 	temp_nb = stk->nb;
-	temp_id = stk->id;
 	stk->nb = stk->next->nb;
-	stk->id = stk->next->id;
 	stk->next->nb = temp_nb;
-	stk->next->id = temp_id;
+	ft_set_index(stk);
 }
 //Swap the 2 first elements of the given stack a.
 void	ft_sa(t_stack **stk_a)

@@ -6,7 +6,7 @@
 #    By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 15:08:31 by alde-abr          #+#    #+#              #
-#    Updated: 2025/02/11 02:21:54 by alde-abr         ###   ########.fr        #
+#    Updated: 2025/02/26 21:24:21 by alde-abr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ CFLAGS =
 LIB = libft/libft.a
 
 SRC = \
-	ps_parsing.c push_swap.c stack_utils.c ps_debug.c algoritm.c \
-	rule_push.c rule_swap.c rule_rotate.c rule_reverse_rotate.c
+	ps_parsing.c push_swap.c stack_utils.c ps_debug.c algo_find_cheap.c \
+	rule_push.c rule_swap.c rule_rotate.c rule_reverse_rotate.c algo_sort.c \
+	algo_utils.c algo_move.c
 
 INCLUDES = -Iincludes/
 
