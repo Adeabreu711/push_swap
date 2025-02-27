@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:58:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/26 21:22:00 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:07:38 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,20 @@ void	ft_print_stack(t_stack *stk_a, t_stack *stk_b);
 void	ft_set_index(t_stack *stk);
 void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b);
 
-t_stack	*ft_get_cheaper(t_stack **stk_a, t_stack **stk_b, int *out_trg_id);
+t_stack	*ft_get_cheaper(t_stack **stk_a, t_stack **stk_b, int *trg_id, int to_b);
 int		ft_count_rotates(int id, int len);
 void	ft_sort(t_stack **stk_a, t_stack **stk_b);
 int		ft_merge_instructions(int *rotation_a, int *rotation_b);
 void	ft_sort_three(t_stack **stk);
 int		ft_check_sort(t_stack *stk);
 t_stack	*ft_get_max(t_stack *stk);
-void	ft_move_to_target(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
+void	ft_move_to_btarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
+void	ft_move_to_atarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
+
+
+int		ft_get_atrg_id(int nb,t_stack *stk_a);
+int		ft_get_btrg_id(int nb,t_stack *stk_b);
+
 
 //Rules
 

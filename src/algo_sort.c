@@ -6,17 +6,20 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 19:19:37 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/26 21:21:48 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 12:56:18 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+//Push to value from the stack a to the top of the stack a.
 void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b)
 {
 	ft_pb(stk_a, stk_b);
 	ft_pb(stk_a, stk_b);
 }
+
+//Sort three value in two moves or less.
 void	ft_sort_three(t_stack **stk)
 {
 	t_stack	*temp;
@@ -32,6 +35,23 @@ void	ft_sort_three(t_stack **stk)
 		ft_sa(stk);
 }
 
+//Rotate
+void	ft_rotate_until_sort(t_stack **stk_a)
+{
+	t_stack	*max;
+	int		len_a;
+	void(*f)(t_stack**);
+
+	len_a = ft_stklen(*stk_a);
+	max = ft_get_max(*stk_a);
+	f = ft_ra;
+	if (max->id > len_a / 2)
+		f = ft_rra;
+	while (max->id != len_a)
+		f(stk_a);
+}
+
+//Sort the stack a in ascending order.
 void	ft_sort(t_stack **stk_a, t_stack **stk_b)
 {
 	t_stack	*cheaper;
@@ -43,12 +63,21 @@ void	ft_sort(t_stack **stk_a, t_stack **stk_b)
 	trg_id = 0;
 	while (len[0] > 3)
 	{
-		cheaper = ft_get_cheaper(stk_a, stk_b, &trg_id);
+		cheaper = ft_get_cheaper(stk_a, stk_b, &trg_id, 1);
 		printf("cheaper : id[%i] %i\n triger id[%i]\n", cheaper->id, cheaper->nb, trg_id);
-		ft_move_to_target(cheaper->id, trg_id, stk_a, stk_b);
+		ft_move_to_btarget(cheaper->id, trg_id, stk_a, stk_b);
 		len[0]--;
 		len[1]++;
 	}
 	ft_sort_three(stk_a);
+	ft_print_stack(*stk_a, *stk_b);
+	while(len[1] > 0)
+	{
+		cheaper = ft_get_cheaper(stk_a, stk_b, &trg_id, 0);
+		ft_move_to_atarget(cheaper->id, trg_id, stk_a, stk_b);
+		len[1]--;
+		len[0]++;
+	}
+	ft_rotate_until_sort(stk_a);
 	ft_print_stack(*stk_a, *stk_b);
 }
