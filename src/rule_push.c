@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 00:50:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/26 21:11:55 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:05:07 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	ft_push(t_stack **src, t_stack **dest)
 	ft_set_index(*src);
 	ft_set_index(*dest);
 }
+
 //Push the top element of stack b to the top of stack a.
 void	ft_pa(t_stack **stk_a, t_stack **stk_b)
 {

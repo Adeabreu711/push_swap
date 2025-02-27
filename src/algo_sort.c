@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 19:19:37 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 12:56:18 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:11:22 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b)
 void	ft_sort_three(t_stack **stk)
 {
 	t_stack	*temp;
-	t_stack *max;
+	t_stack	*max;
 
 	temp = *stk;
 	max = ft_get_max(*stk);
@@ -35,12 +35,12 @@ void	ft_sort_three(t_stack **stk)
 		ft_sa(stk);
 }
 
-//Rotate
-void	ft_rotate_until_sort(t_stack **stk_a)
+//Rotate until max value of the list is on top.
+void	ft_rotate_max_to_top(t_stack **stk_a)
 {
 	t_stack	*max;
 	int		len_a;
-	void(*f)(t_stack**);
+	void	(*f)(t_stack**);
 
 	len_a = ft_stklen(*stk_a);
 	max = ft_get_max(*stk_a);
@@ -64,20 +64,17 @@ void	ft_sort(t_stack **stk_a, t_stack **stk_b)
 	while (len[0] > 3)
 	{
 		cheaper = ft_get_cheaper(stk_a, stk_b, &trg_id, 1);
-		printf("cheaper : id[%i] %i\n triger id[%i]\n", cheaper->id, cheaper->nb, trg_id);
 		ft_move_to_btarget(cheaper->id, trg_id, stk_a, stk_b);
 		len[0]--;
 		len[1]++;
 	}
 	ft_sort_three(stk_a);
-	ft_print_stack(*stk_a, *stk_b);
-	while(len[1] > 0)
+	while (len[1] > 0)
 	{
 		cheaper = ft_get_cheaper(stk_a, stk_b, &trg_id, 0);
 		ft_move_to_atarget(cheaper->id, trg_id, stk_a, stk_b);
 		len[1]--;
 		len[0]++;
 	}
-	ft_rotate_until_sort(stk_a);
-	ft_print_stack(*stk_a, *stk_b);
+	ft_rotate_max_to_top(stk_a);
 }

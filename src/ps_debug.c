@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:11:32 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/24 16:27:48 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:03:13 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ void	ft_print_stack(t_stack *stk_a, t_stack *stk_b)
 			temp_a = temp_a->next;
 		}
 		else
-			ft_printf("%-19s","");
+			ft_printf("%-19s", "");
 		if (temp_b)
 		{
 			ft_printf("id[%i]: %-12i", temp_b->id, temp_b->nb);
 			temp_b = temp_b->next;
 		}
-		write(1,"\n",1);
+		write(1, "\n", 1);
 	}
-	write(1,"\n",1);
+	write(1, "\n", 1);
 }

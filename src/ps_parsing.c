@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:44:26 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/24 13:52:32 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:03:28 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static long	ft_atoi_strict(const char *nptr)
 	if (nptr[i] == '-' || nptr[i] == '+')
 		if (nptr[i++] == '-')
 			sign = -sign;
-	while (nptr[i] >= '0' && nptr[i] <= '9' && (temp > INT_MIN && temp < INT_MAX))
+	while (nptr[i] >= '0' && nptr[i] <= '9'
+		&& (temp > INT_MIN && temp < INT_MAX))
 		temp = (temp * 10) + (nptr[i++] - '0');
 	if ((i < 2 && !ft_isdigit(nptr[0])) || nptr[i])
 		return ((long)INT_MIN - 1);
@@ -95,4 +96,3 @@ int	ft_ps_parsing(t_stack **stk_a, int argc, char **argv)
 	ft_set_index(*stk_a);
 	return (1);
 }
-

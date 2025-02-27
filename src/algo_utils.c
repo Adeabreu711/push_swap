@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 19:46:08 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 11:51:19 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:08:10 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,11 @@ int	ft_check_sort(t_stack *stk)
  * or the max value if not found.
  * @return Return the id of the best target found.
  */
-int	ft_get_btrg_id(int nb,t_stack *stk_b)
+int	ft_get_btrg_id(int nb, t_stack *stk_b)
 {
 	t_stack	*temp;
 	t_stack	*best;
 
-	//printf("CHECK INFERIOR\n");
 	temp = stk_b;
 	best = temp;
 	while (temp)
@@ -83,12 +82,11 @@ int	ft_get_btrg_id(int nb,t_stack *stk_b)
  * or the min value if not found.
  * @return Return the id of the best target found.
  */
-int	ft_get_atrg_id(int nb,t_stack *stk_a)
+int	ft_get_atrg_id(int nb, t_stack *stk_a)
 {
 	t_stack	*temp;
 	t_stack	*best;
 
-	//printf("CHECK SUPPERIOR\n");
 	temp = stk_a;
 	best = temp;
 	while (temp)
@@ -103,5 +101,3 @@ int	ft_get_atrg_id(int nb,t_stack *stk_a)
 	}
 	return (best->id);
 }
-
-

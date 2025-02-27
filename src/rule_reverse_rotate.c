@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 02:02:03 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/11 14:57:25 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:05:41 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 static void	ft_reverse_rotate(t_stack **stk)
 {
 	t_stack	*temp;
-	t_stack *last;
-	t_stack *second_last;
+	t_stack	*last;
+	t_stack	*second_last;
 
 	second_last = *stk;
 	while (second_last->next->next)
@@ -29,6 +29,7 @@ static void	ft_reverse_rotate(t_stack **stk)
 	second_last->next = NULL;
 	ft_set_index(*stk);
 }
+
 //The last element of the stack a became the first.
 void	ft_rra(t_stack **stk_a)
 {
