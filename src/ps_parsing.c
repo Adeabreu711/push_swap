@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:44:26 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:03:28 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 23:03:41 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,6 @@ int	ft_check_duplicate(t_stack *stk_a)
 	return (1);
 }
 
-//Set the index of the elements of the given stack in order.
-void	ft_set_index(t_stack *stk)
-{
-	int		i;
-	t_stack	*temp;
-
-	i = 1;
-	temp = stk;
-	while (temp)
-	{
-		temp->id = i;
-		temp = temp->next;
-		i++;
-	}
-}
-
 // Read the given arguments and assign them to stack A.
 // [Return: 0] if an argument is not an integer or if its identical to another.
 int	ft_ps_parsing(t_stack **stk_a, int argc, char **argv)
@@ -89,7 +73,7 @@ int	ft_ps_parsing(t_stack **stk_a, int argc, char **argv)
 		if (i == 1)
 			*stk_a = ft_stknew(nb);
 		else
-			ft_stk_add_back(stk_a, ft_stknew(nb));
+			ft_check_add_back(stk_a, ft_stknew(nb));
 	}
 	if (!ft_check_duplicate(*stk_a))
 		return (0);

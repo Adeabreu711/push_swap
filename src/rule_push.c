@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 00:50:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:05:07 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:02:16 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,17 @@ static void	ft_push(t_stack **src, t_stack **dest)
 }
 
 //Push the top element of stack b to the top of stack a.
-void	ft_pa(t_stack **stk_a, t_stack **stk_b)
+void	ft_pa(t_stack **stk_a, t_stack **stk_b, int show)
 {
 	ft_push(stk_b, stk_a);
-	write(1, "pa\n", 3);
+	if (show)
+		write(1, "pa\n", 3);
 }
 
 //Push the top element of stack a to the top of stack b.
-void	ft_pb(t_stack **stk_a, t_stack **stk_b)
+void	ft_pb(t_stack **stk_a, t_stack **stk_b, int show)
 {
 	ft_push(stk_a, stk_b);
-	write(1, "pb\n", 3);
+	if (show)
+		write(1, "pb\n", 3);
 }

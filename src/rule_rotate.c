@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 01:33:06 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:06:03 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 21:59:08 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,33 @@ static void	ft_rotate(t_stack **stk)
 
 	temp = *stk;
 	*stk = (*stk)->next;
-	last = ft_stklast(*stk);
+	last = ft_checklast(*stk);
 	last->next = temp;
 	temp->next = NULL;
 	ft_set_index(*stk);
 }
 
 //The top element of the stack a became the last.
-void	ft_ra(t_stack **stk_a)
+void	ft_ra(t_stack **stk_a, int show)
 {
 	ft_rotate(stk_a);
-	write(1, "ra\n", 3);
+	if (show)
+		write(1, "ra\n", 3);
 }
 
 //The top element of the stack b became the last.
-void	ft_rb(t_stack **stk_a)
+void	ft_rb(t_stack **stk_b, int show)
 {
-	ft_rotate(stk_a);
-	write(1, "rb\n", 3);
+	ft_rotate(stk_b);
+	if (show)
+		write(1, "rb\n", 3);
 }
 
 //The top element of the stack a and b became the last.
-void	ft_rr(t_stack **stk_a, t_stack **stk_b)
+void	ft_rr(t_stack **stk_a, t_stack **stk_b, int show)
 {
 	ft_rotate(stk_a);
 	ft_rotate(stk_b);
-	write(1, "rr\n", 3);
+	if (show)
+		write(1, "rr\n", 3);
 }

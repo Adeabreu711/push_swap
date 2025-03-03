@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils.c                                      :+:      :+:    :+:   */
+/*   stack_utils1.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 16:11:32 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/26 20:35:56 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 23:04:31 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_stklen(t_stack *stk)
 }
 
 //Return the last node in the given stack.
-t_stack	*ft_stklast(t_stack *stk)
+t_stack	*ft_checklast(t_stack *stk)
 {
 	t_stack	*last;
 
@@ -58,14 +58,14 @@ t_stack	*ft_stklast(t_stack *stk)
 }
 
 //Add a new node at the end of the given stack.
-void	ft_stk_add_back(t_stack **stk, t_stack *new)
+void	ft_check_add_back(t_stack **stk, t_stack *new)
 {
 	if (!stk)
 		return ;
 	if (!*stk)
 		*stk = new;
 	else
-		ft_stklast(*stk)->next = new;
+		ft_checklast(*stk)->next = new;
 }
 
 //Free all the nodes of the given stack.

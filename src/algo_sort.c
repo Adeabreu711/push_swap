@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 19:19:37 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/28 15:01:59 by alex             ###   ########.fr       */
+/*   Updated: 2025/03/03 22:08:47 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 //Push to value from the stack a to the top of the stack a.
 void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b)
 {
-	ft_pb(stk_a, stk_b);
-	ft_pb(stk_a, stk_b);
+	ft_pb(stk_a, stk_b, 1);
+	ft_pb(stk_a, stk_b, 1);
 }
 
 //Sort three value in two moves or less.
@@ -28,11 +28,11 @@ void	ft_sort_three(t_stack **stk)
 	temp = *stk;
 	max = ft_get_max(*stk);
 	if (max->id == 1)
-		ft_ra(stk);
+		ft_ra(stk, 1);
 	else if (max->id == 2)
-		ft_rra(stk);
+		ft_rra(stk, 1);
 	if (!ft_check_sort(*stk))
-		ft_sa(stk);
+		ft_sa(stk, 1);
 }
 
 //Rotate until max value of the list is on top.
@@ -40,7 +40,7 @@ void	ft_rotate_max_to_top(t_stack **stk_a)
 {
 	t_stack	*max;
 	int		len_a;
-	void	(*f)(t_stack**);
+	void	(*f)(t_stack**, int);
 
 	len_a = ft_stklen(*stk_a);
 	max = ft_get_max(*stk_a);
@@ -48,7 +48,7 @@ void	ft_rotate_max_to_top(t_stack **stk_a)
 	if (max->id > len_a / 2)
 		f = ft_rra;
 	while (max->id != len_a)
-		f(stk_a);
+		f(stk_a, 1);
 }
 
 //Sort the stack a in ascending order.

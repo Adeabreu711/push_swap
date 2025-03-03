@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 01:16:40 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:06:22 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:40:51 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,26 @@ static void	ft_swap(t_stack *stk)
 }
 
 //Swap the 2 first elements of the given stack a.
-void	ft_sa(t_stack **stk_a)
+void	ft_sa(t_stack **stk_a, int show)
 {
 	ft_swap(*stk_a);
-	write(1, "sa\n", 3);
+	if (show)
+		write(1, "sa\n", 3);
 }
 
 //Swap the 2 first elements of the given stack b.
-void	ft_sb(t_stack **stk_b)
+void	ft_sb(t_stack **stk_b, int show)
 {
 	ft_swap(*stk_b);
-	write(1, "sb\n", 3);
+	if (show)
+		write(1, "sb\n", 3);
 }
 
 //Swap the 2 first elements of the stack a and stack b.
-void	ft_ss(t_stack **stk_a, t_stack **stk_b)
+void	ft_ss(t_stack **stk_a, t_stack **stk_b, int show)
 {
 	ft_swap(*stk_a);
 	ft_swap(*stk_b);
-	write(1, "ss\n", 3);
+	if (show)
+		write(1, "ss\n", 3);
 }

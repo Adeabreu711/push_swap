@@ -6,12 +6,12 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:58:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:03:38 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 22:20:01 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 #include"../libft/includes/libft.h"
 
@@ -44,24 +44,24 @@ int		ft_get_btrg_id(int nb,t_stack *stk_b);
 
 //Rules
 
-void	ft_sa(t_stack **stk_a);
-void	ft_sb(t_stack **stk_b);
-void	ft_ss(t_stack **stk_a, t_stack **stk_b);
-void	ft_pa(t_stack **stk_a, t_stack **stk_b);
-void	ft_pb(t_stack **stk_a, t_stack **stk_b);
-void	ft_ra(t_stack **stk_a);
-void	ft_rb(t_stack **stk_a);
-void	ft_rr(t_stack **stk_a, t_stack **stk_b);
-void	ft_rra(t_stack **stk_a);
-void	ft_rrb(t_stack **stk_b);
-void	ft_rrr(t_stack **stk_a, t_stack **stk_b);
+void	ft_sa(t_stack **stk_a, int show);
+void	ft_sb(t_stack **stk_b, int show);
+void	ft_ss(t_stack **stk_a, t_stack **stk_b, int show);
+void	ft_pa(t_stack **stk_a, t_stack **stk_b, int show);
+void	ft_pb(t_stack **stk_a, t_stack **stk_b, int show);
+void	ft_ra(t_stack **stk_a, int show);
+void	ft_rb(t_stack **stk_b, int show);
+void	ft_rr(t_stack **stk_a, t_stack **stk_b, int show);
+void	ft_rra(t_stack **stk_a, int show);
+void	ft_rrb(t_stack **stk_b, int show);
+void	ft_rrr(t_stack **stk_a, t_stack **stk_b, int show);
 
 //Stack utils
 
 t_stack	*ft_stknew(int nbr);
 int		ft_stklen(t_stack *stk);
-t_stack	*ft_stklast(t_stack *stk);
-void	ft_stk_add_back(t_stack **stk, t_stack *new);
+t_stack	*ft_checklast(t_stack *stk);
+void	ft_check_add_back(t_stack **stk, t_stack *new);
 void	ft_stkclear(t_stack **stk);
 
 #endif
