@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_move.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:18:35 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:10:25 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/03 19:31:49 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 //Merge the ra/rb and rra/rrb instructions
 //into rr/rrr (optimization).
-int	ft_merge_instructions(int *rotation_a, int *rotation_b)
+int	ft_merge_instructions(int *rotation_a, int *rotation_b)//15 //-10
 {
 	int	rotation_mix;
-	int	sign;
 
 	if ((*rotation_a >= 0 && *rotation_b <= 0)
 		|| (*rotation_a <= 0 && *rotation_b >= 0))
 		return (0);
-	sign = (*rotation_a > 0 * 2) - 1;
-	if ((*rotation_b * sign) < (*rotation_a * sign))
+ 	if (ft_abs(*rotation_b) < ft_abs(*rotation_a))//-10 * 1 < 15 * 1
 	{
 		rotation_mix = *rotation_b;
 		*rotation_b = 0;

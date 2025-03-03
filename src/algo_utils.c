@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alex <alex@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 19:46:08 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/02/27 13:08:10 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:01:11 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_check_sort(t_stack *stk)
 	back = stk;
 	while (front)
 	{
-		if (front > back)
+		if (front->nb < back->nb)
 			return (0);
 		front = front->next;
 		back = back->next;
