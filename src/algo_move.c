@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 21:18:35 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/03 22:09:41 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:00:23 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 //Merge the ra/rb and rra/rrb instructions
 //into rr/rrr (optimization).
-int	ft_merge_instructions(int *rotation_a, int *rotation_b)//15 //-10
+int	ft_merge_instructions(int *rotation_a, int *rotation_b)
 {
 	int	rotation_mix;
 
 	if ((*rotation_a >= 0 && *rotation_b <= 0)
 		|| (*rotation_a <= 0 && *rotation_b >= 0))
 		return (0);
- 	if (ft_abs(*rotation_b) < ft_abs(*rotation_a))//-10 * 1 < 15 * 1
+	if (ft_abs(*rotation_b) < ft_abs(*rotation_a))
 	{
 		rotation_mix = *rotation_b;
 		*rotation_b = 0;
@@ -61,7 +61,7 @@ void	ft_apply_mixrota(t_stack **stk_a, t_stack **stk_b, int rota_mix)
 }
 
 //Move the stack a value to the stack b on the top of the target.
-void	ft_move_to_btarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b)
+void	ft_move_to_btrg(int id, int trg_id, t_stack **stk_a, t_stack **stk_b)
 {
 	int		rotation_a;
 	int		rotation_b;
@@ -82,7 +82,7 @@ void	ft_move_to_btarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b)
 }
 
 //Move the stack b value to the stack a on the top of the target.
-void	ft_move_to_atarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b)
+void	ft_move_to_atrg(int id, int trg_id, t_stack **stk_a, t_stack **stk_b)
 {
 	int		rotation_a;
 	int		rotation_b;

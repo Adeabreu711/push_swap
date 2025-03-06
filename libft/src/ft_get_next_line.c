@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 16:22:04 by alde-abre         #+#    #+#             */
-/*   Updated: 2025/03/03 19:52:58 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:04:09 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,19 @@ char	*read_line(int fd, char *buff)
  */
 char	*ft_get_next_line(int fd)
 {
+	int			i;
 	static char	*buff[1024] = {0};
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE == 0 || read(fd, 0, 0) < 0)
+	i = -1;
+	if (fd >= 0 && (BUFFER_SIZE == 0 || read(fd, 0, 0) < 0))
 		return (safe_free((void **)&buff[fd]));
+	else if (fd < 0)
+	{
+		while (++i < 1024)
+			safe_free((void **)&buff[i]);
+		return (NULL);
+	}
 	if (!buff[fd])
 		buff[fd] = ft_calloc(1, 1);
 	buff[fd] = read_line(fd, buff[fd]);

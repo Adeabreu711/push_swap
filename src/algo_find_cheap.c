@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 23:56:34 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/03 22:02:30 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/06 14:00:43 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_mvcount(int id, int trg_id, int len, int trg_len)
 //than the others to get push on top of his target.
 //to_b : stack a target, else stack b target.
 //to b || !to_b
-t_stack	*ft_get_cheaper(t_stack **stk_a, t_stack **stk_b, int *trg_id, int to_b)
+t_stack	*ft_get_cheap(t_stack **stk_a, t_stack **stk_b, int *trg_id, int to_b)
 {
 	t_stack	*cheaper;
 	int		mv_best;

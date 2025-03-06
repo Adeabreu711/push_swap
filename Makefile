@@ -6,7 +6,7 @@
 #    By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 15:08:31 by alde-abr          #+#    #+#              #
-#    Updated: 2025/03/03 23:07:03 by alde-abr         ###   ########.fr        #
+#    Updated: 2025/03/06 16:38:40 by alde-abr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ CFLAGS =
 LIB = libft/libft.a
 
 SRC = \
-	ps_parsing.c push_swap.c stack_utils1.c ps_debug.c algo_find_cheap.c \
-	algo_sort.c algo_utils.c algo_move.c rule_push.c rule_swap.c rule_rotate.c \
-	rule_reverse_rotate.c stack_utils2.c \
+	push_swap.c algo_sort.c algo_find_cheap.c algo_move.c \
+	stack_utils1.c stack_utils2.c algo_utils.c ps_parsing.c \
+	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c \
 
 SRC_BONUS = \
-	checker.c checker_utils.c rule_push.c rule_swap.c rule_rotate.c \
-	rule_reverse_rotate.c stack_utils1.c stack_utils2.c \
+	checker.c checker_utils.c process_insts.c \
+	stack_utils1.c stack_utils2.c algo_utils.c ps_parsing.c \
+	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c \
 
 INCLUDES = -Iincludes/
 INCLUDES_BONUS = -Ibonus/

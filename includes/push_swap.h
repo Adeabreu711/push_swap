@@ -6,14 +6,14 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:58:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/03 22:20:01 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/06 16:45:45 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include"../libft/includes/libft.h"
+# include"../libft/includes/libft.h"
 
 typedef struct s_stack
 {
@@ -27,22 +27,21 @@ void	ft_print_stack(t_stack *stk_a, t_stack *stk_b);
 void	ft_set_index(t_stack *stk);
 void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b);
 
-t_stack	*ft_get_cheaper(t_stack **stk_a, t_stack **stk_b, int *trg_id, int to_b);
+t_stack	*ft_get_cheap(t_stack **stk_a, t_stack **stk_b, int *trg_id, int to_b);
 int		ft_count_rotates(int id, int len);
 void	ft_sort(t_stack **stk_a, t_stack **stk_b);
 int		ft_merge_instructions(int *rotation_a, int *rotation_b);
 void	ft_sort_three(t_stack **stk);
+void	ft_sort_two(t_stack **stk_a);
 int		ft_check_sort(t_stack *stk);
 t_stack	*ft_get_max(t_stack *stk);
-void	ft_move_to_btarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
-void	ft_move_to_atarget(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
+void	ft_move_to_btrg(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
+void	ft_move_to_atrg(int id, int trg_id, t_stack **stk_a, t_stack **stk_b);
 
+int		ft_get_atrg_id(int nb, t_stack *stk_a);
+int		ft_get_btrg_id(int nb, t_stack *stk_b);
 
-int		ft_get_atrg_id(int nb,t_stack *stk_a);
-int		ft_get_btrg_id(int nb,t_stack *stk_b);
-
-
-//Rules
+//Instructions
 
 void	ft_sa(t_stack **stk_a, int show);
 void	ft_sb(t_stack **stk_b, int show);

@@ -6,7 +6,7 @@
 #    By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/11 15:16:24 by alde-abr          #+#    #+#              #
-#    Updated: 2025/03/03 19:48:54 by alde-abr         ###   ########.fr        #
+#    Updated: 2025/03/06 13:10:07 by alde-abr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC = \
 	ft_putbits.c ft_strrnchr.c ft_intcomp.c ft_strlowcase.c \
 	ft_strupcase.c ft_digitcount.c ft_putnbr.c ft_atoi_base.c \
 	ft_digitcount_base.c ft_strupcase.c ft_abs.c ft_get_next_line.c \
+	ft_strcmp.c \
 	\
 	$(SB_S)/ft_string_builder.c $(SB_S)/ft_string_builder_utils.c \
 	\

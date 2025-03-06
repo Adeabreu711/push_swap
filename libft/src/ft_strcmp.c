@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utils2.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/03 23:04:06 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/06 18:33:15 by alde-abr         ###   ########.fr       */
+/*   Created: 2025/03/06 13:04:58 by alde-abr          #+#    #+#             */
+/*   Updated: 2025/03/06 13:57:17 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
-
-//Set the index of the elements of the given stack in order.
-void	ft_set_index(t_stack *stk)
+/**
+ * @brief Compare two strings.
+ * @return 0 if no diff OR the diff of the first two different char (s1[]-s2[]).
+ */
+int	ft_strcmp(char *s1, char *s2)
 {
-	int		i;
-	t_stack	*temp;
+	int	i;
 
-	i = 1;
-	temp = stk;
-	while (temp)
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-		temp->id = i;
-		temp = temp->next;
+		if (s1[i] != s2[i])
+			return ((int)(s1[i] - s2[i]));
 		i++;
 	}
+	return (0);
 }
