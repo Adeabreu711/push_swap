@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:56:44 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/06 18:34:51 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/06 20:03:03 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	ft_clear_all(t_stack **stk_a, t_stack **stk_b)
 	return (0);
 }
 
+//Optimize sorting if number of elements match.
 int	ft_short_sort(t_stack **stk_a, int argc)
 {
 	if (argc > 4)
@@ -33,7 +34,7 @@ int	ft_short_sort(t_stack **stk_a, int argc)
 	return (1);
 }
 
-//Program : push_swap
+//Program : push_swap.
 int	main(int argc, char *argv[])
 {
 	t_stack	*stk_a;
