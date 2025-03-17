@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:58:29 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/06 16:45:45 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:35:13 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-int		ft_ps_parsing(t_stack **stk_a, int argc, char **argv);
-void	ft_print_stack(t_stack *stk_a, t_stack *stk_b);
+int		ft_ps_parsing(t_stack **stk_a, char **argv);
 void	ft_set_index(t_stack *stk);
 void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b);
 
@@ -62,5 +61,12 @@ int		ft_stklen(t_stack *stk);
 t_stack	*ft_checklast(t_stack *stk);
 void	ft_check_add_back(t_stack **stk, t_stack *new);
 void	ft_stkclear(t_stack **stk);
+
+//Tab utils
+
+int		ft_tablen(char **tab);
+char	**ft_merge_tab(char **dest, char **src);
+char	**ft_split_args(char **argv);
+char	**free_tab(char **tab);
 
 #endif

@@ -6,25 +6,25 @@
 #    By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/07 15:08:31 by alde-abr          #+#    #+#              #
-#    Updated: 2025/03/06 16:38:40 by alde-abr         ###   ########.fr        #
+#    Updated: 2025/03/17 16:42:40 by alde-abr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 NAME_BONUS = checker
 CC = gcc
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 LIB = libft/libft.a
 
 SRC = \
 	push_swap.c algo_sort.c algo_find_cheap.c algo_move.c \
 	stack_utils1.c stack_utils2.c algo_utils.c ps_parsing.c \
-	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c \
+	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c tab_utils.c \
 
 SRC_BONUS = \
 	checker.c checker_utils.c process_insts.c \
 	stack_utils1.c stack_utils2.c algo_utils.c ps_parsing.c \
-	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c \
+	inst_push.c inst_swap.c inst_rotate.c inst_reverse_rotate.c tab_utils.c \
 
 INCLUDES = -Iincludes/
 INCLUDES_BONUS = -Ibonus/

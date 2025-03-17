@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 19:40:37 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/06 20:01:52 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:40:37 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ int	main(int argc, char *argv[])
 
 	stk_a = NULL;
 	stk_b = NULL;
+	check = NULL;
 	if (argc == 1)
 		return (0);
-	if (!ft_ps_parsing(&stk_a, argc, argv))
+	if (!ft_ps_parsing(&stk_a, argv))
 	{
 		write(2, "Error\n", 6);
 		return (ft_clear_all(&check, &stk_a, &stk_b));

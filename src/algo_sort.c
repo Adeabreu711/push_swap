@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 19:19:37 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/06 19:00:43 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/17 16:43:24 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ void	ft_init_stack_b(t_stack **stk_a, t_stack **stk_b)
 //Sort three values in two moves or less.
 void	ft_sort_three(t_stack **stk_a)
 {
-	t_stack	*temp;
 	t_stack	*max;
 
 	if (!*stk_a || ft_stklen(*stk_a) != 3)
 		return ;
-	temp = *stk_a;
 	max = ft_get_max(*stk_a);
 	if (max->id == 1)
 		ft_ra(stk_a, 1);
