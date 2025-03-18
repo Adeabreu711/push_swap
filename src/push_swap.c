@@ -6,7 +6,7 @@
 /*   By: alde-abr <alde-abr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 14:56:44 by alde-abr          #+#    #+#             */
-/*   Updated: 2025/03/17 16:43:04 by alde-abr         ###   ########.fr       */
+/*   Updated: 2025/03/18 14:34:17 by alde-abr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_clear_all(t_stack **stk_a, t_stack **stk_b)
 //Optimize sorting if number of elements match.
 int	ft_short_sort(t_stack **stk_a, int len)
 {
+	if (ft_check_sort(*stk_a))
+		return (1);
 	if (len > 3)
 		return (0);
 	else if (len == 2)
